@@ -5,5 +5,95 @@
   --text-white: white;
   --text-black: black;
   --background-beige: #dcc1ab;
-  --background-grey: #f5f0ec;
+  --background-gray: #f5f0ec;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.green-background {
+  background-color: var(--main-green);
+}
+
+.beige-background {
+  background-color: var(--background-beige);
+}
+
+.gray-background {
+  background-color: var(--background-gray);
+}
+
+.padding-top-120 {
+  padding-top: 120px;
+}
+
+.padding-bottom-120 {
+  padding-bottom: 120px;
+}
+
+.padding-bottom-160 {
+  padding-bottom: 160px;
+}
+
+.padding-horizontal {
+  padding: 0 88px;
+}
+
+.btn-green {
+  color: var(--text-white);
+  background-color: var(--main-green);
+}
+
+.navi-small {
+  font-size: var(--navi-small-font-size);
+  color: var(--main-green);
+  font-weight: 500;
+}
+
+.card {
+  margin: 20px 32px;
+  max-width: 378px;
+  max-height: 370px;
+  border-radius: 28px;
+  border: none;
+  transition: transform 250ms;
+}
+
+.card:hover {
+  border: 1px solid var(--main-green);
+  transform: scale(95%);
+}
+
+.card-body {
+  margin: 35px 20px;
+  gap: 32px;
+}
+
+.card-text {
+  line-height: 150%;
+  text-align: left;
+  letter-spacing: -1%;
+  font-size: 14px;
+}
+
+.know-more {
+  text-decoration: none;
+  color: var(--main-green);
+  border-bottom: 1px solid var(--main-green);
+  padding-bottom: 3px;
+  transition: background-color 250ms ease-in;
+}
+
+.know-more:hover {
+  background-color: var(--main-green);
+  color: var(--text-white);
+}
+
+@media screen and (min-width: 1200px) {
+  #oferta-line-1::after {
+    content: "\a";
+    white-space: pre;
+  }
 }
