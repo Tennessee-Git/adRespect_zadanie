@@ -14,6 +14,13 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .green-background {
@@ -36,6 +43,10 @@ body {
   padding-top: 120px;
 }
 
+.padding-bottom-96 {
+  padding-bottom: 96px;
+}
+
 .padding-bottom-120 {
   padding-bottom: 120px;
 }
@@ -49,7 +60,15 @@ body {
 }
 
 .padding-horizontal-220 {
+  padding: 0 15%;
+}
+
+.padding-horizontal-110 {
   padding: 0 10%;
+}
+
+.padding-vertical-120 {
+  padding: 120px auto;
 }
 
 /* --------TEXT---------- */
@@ -76,6 +95,13 @@ body {
   white-space: pre;
 }
 
+@media screen and (min-width: 1200px) {
+  #oferta-line-1::after {
+    content: "\a";
+    white-space: pre;
+  }
+}
+
 .headline {
   font-size: var(--headline-font-size);
   line-height: 115%;
@@ -84,6 +110,46 @@ body {
 .headline-medium {
   font-size: var(--headline-medium-font-size);
   line-height: 120%;
+  letter-spacing: -2px;
+}
+
+.headline-italic {
+  letter-spacing: 1px;
+}
+
+/* -------------------------------- */
+
+/* ------------NAVBAR------------- */
+
+.navbar {
+  background-color: white;
+  color: var(--text-black);
+}
+
+.nav-item {
+  color: var(--text-black);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+@media screen and (max-width:992px){
+  .navbar-nav {
+    align-items: start;
+  }
+}
+
+.navbar-brand {
+  font-size: 19px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: white;
 }
 
 /* -------------------------------- */
@@ -116,6 +182,36 @@ body {
 }
 /* -------------------------------- */
 
+/* -----------GRID------- */
+.grid {
+  width: 100%;
+}
+
+.grid-item {
+  width: 100%;
+}
+
+/* ------------GRADIENT-------------- */
+.gradient {
+  position: relative;
+}
+
+.gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--background-beige));
+}
+
+/* -------------------------------- */
+.gradient {
+  background-color: linear-gradient();
+}
+/* -------------------------------- */
+
 /* -----------KNOW-MORE------- */
 .know-more {
   text-decoration: none;
@@ -132,24 +228,33 @@ body {
 /* -------------------------------- */
 
 /* ---------BUTTON--------- */
+.btn {
+  border-radius: 200px;
+  padding: 14px 22px;
+}
+
 .btn-outline {
   color: var(--background-gray);
-  border-radius: 200px;
   border-color: var(--background-gray);
-  padding: 14px 22px;
+
   line-height: 150%;
   font-size: var(--paragraph-text-font-size);
 }
 
-.btn-outline:hover,
-.btn-outline:focus {
+.btn-outline:hover {
   background-color: var(--background-gray) !important;
+  color: var(--main-green);
+}
+
+.btn-outline-green {
+  color: var(--main-green);
+  border-color: var(--main-green);
 }
 
 .btn-gray {
   background-color: var(--background-gray);
   color: var(--main-green);
-  border-radius: 200px;
+
   font-size: var(--paragraph-text-font-size);
   font-weight: 500;
 }
@@ -164,32 +269,46 @@ body {
 .btn-green {
   background-color: var(--main-green);
   color: var(--background-gray);
-  border-radius: 200px;
+  border: none;
 }
 
 .btn-green:hover,
 .btn-green:focus {
-  background-color: var(--background-black);
-  border: 1px solid var(--background-gray);
+  background-color: var(--background-gray);
+  color: var(--main-green);
+}
+
+.btn-black {
+  border-radius: 200px;
+  position: relative;
+  bottom: 1%;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%);
+}
+
+.btn-black:hover {
+  color: var(--background-beige);
+  background-color: var(--text-black);
 }
 
 /* -------------CONTACT---------------- */
 .contact {
-  width: 1040px;
+  width: 100%;
   padding: 110px 120px;
 }
 
 /* ------------------------------------- */
 
 .hardline {
-  border: none;
-  height: 2px;
-  background-color: var(--background-gray);
+  border: 1px solid var(--background-gray);
 }
 
-@media screen and (min-width: 1200px) {
-  #oferta-line-1::after {
-    content: "\a";
-    white-space: pre;
-  }
+.footer {
+  font-size: var(--paragraph-text-font-size);
+  line-height: 150%;
+}
+
+.footer-content {
+  width: 100%;
 }
