@@ -122,7 +122,30 @@
           </button>
         </div>
       </div>
-      <div class="container"></div>
+      <div class="container">
+        <div class="carousel">
+          <button class="btn-carousel prev">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="btn-carousel next">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <ul>
+            <li class="slide" data-active>
+              <img src="./public/Photo.png" alt="" />
+            </li>
+            <li class="slide">
+              <img src="" alt="" />
+            </li>
+            <li class="slide">
+              <img src="" alt="" />
+            </li>
+            <li class="slide">
+              <img src="" alt="" />
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section
       class="container-fluid padding-top-120 padding-bottom-160 gray-background"
@@ -197,7 +220,7 @@
       class="container-fluid m-0 p-0 d-flex justify-content-between row green-background"
     >
       <div class="col p-0">
-        <img src="./public/Photo.png" alt="" class="h-100" />
+        <img src="./public/Photo.png" alt="" class="w-100" />
       </div>
       <div class="col p-0 py-5 ps-5 d-flex align-items-center gray-text">
         <div class="col-9 padding-left-96">
@@ -234,22 +257,38 @@
           </div>
         </div>
       </div>
-      <div class="gradient">
+      <div class="grid-clip" id="gridClip">
         <div class="pb-5 grid" id="realizacjeGrid">
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/eye.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
-          <img src="./public/Photo.png" alt="" class="grid-item" />
+          <img src="./public/Photo1.png" alt="Realiazcja 1" class="grid-item" />
+          <img src="./public/Photo2.png" alt="Realiazcja 2" class="grid-item" />
+          <img src="./public/Photo3.png" alt="Realiazcja 3" class="grid-item" />
+          <img src="./public/Photo5.png" alt="Realiazcja 4" class="grid-item" />
+          <img src="./public/Photo6.png" alt="Realiazcja 5" class="grid-item" />
+          <img src="./public/Photo4.png" alt="Realiazcja 6" class="grid-item" />
+          <img src="./public/Photo8.png" alt="Realiazcja 7" class="grid-item" />
+          <img src="./public/Photo7.png" alt="Realiazcja 8" class="grid-item" />
+          <img src="./public/Photo9.png" alt="Realiazcja 9" class="grid-item" />
+          <img
+            src="./public/Photo5.png"
+            alt="Realiazcja 10"
+            class="grid-item"
+          />
+          <img
+            src="./public/Photo2.png"
+            alt="Realiazcja 11"
+            class="grid-item"
+          />
+          <img
+            src="./public/Photo3.png"
+            alt="Realiazcja 11"
+            class="grid-item"
+          />
         </div>
-        <button class="btn btn-outline-dark btn-black" id="loadMore">
-          Rozwiń <i class="fa-solid fa-arrow-down"></i>
-        </button>
       </div>
+      <button class="btn btn-outline-dark btn-black" id="loadMoreButton">
+        <span>Rozwiń </span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
     </section>
     <section
       class="container-fluid py-5 padding-horizontal-220 d-flex justify-content-center gray-background"
@@ -279,7 +318,9 @@
       id="kontakt"
     >
       <div class="footer-content mx-auto">
-        <div class="flex-row d-flex justify-content-between pb-5">
+        <div
+          class="flex-row d-flex justify-content-between align-items-center flex-wrap pb-5"
+        >
           <div class="d-inline-flex">
             <span class="fw-bold">giard</span>design
           </div>
@@ -289,8 +330,8 @@
           </div>
         </div>
         <hr class="hardline" />
-        <div class="flex-row d-flex justify-content-between pt-5">
-          <div class="d-inline-flex gap-5">
+        <div class="flex-row d-flex justify-content-between flex-wrap pt-5">
+          <div class="d-inline-flex flex-wrap gap-5">
             <a class="text-decoration-none gray-text" href="">Kontakt</a>
             <a class="text-decoration-none gray-text" href="">Instagram</a>
             <a class="text-decoration-none gray-text" href="">Facebook</a>

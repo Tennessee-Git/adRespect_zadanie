@@ -23,6 +23,10 @@ body {
   padding-right: 0;
 }
 
+.row {
+  margin: auto;
+}
+
 .green-background {
   background-color: var(--main-green);
 }
@@ -134,7 +138,7 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width:992px){
+@media screen and (max-width: 992px) {
   .navbar-nav {
     align-items: start;
   }
@@ -150,6 +154,47 @@ body {
 
 .dropdown-menu {
   background-color: white;
+}
+
+/* -------------------------------- */
+
+/* -------------CAROUSEL------------ */
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.slide[data-active] {
+  opacity: 1;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btn-carousel {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  background-color: var(--text-white);
+  color: var(--text-black);
 }
 
 /* -------------------------------- */
@@ -187,29 +232,29 @@ body {
   width: 100%;
 }
 
-.grid-item {
-  width: 100%;
-}
-
-/* ------------GRADIENT-------------- */
-.gradient {
-  position: relative;
-}
-
-.gradient::after {
+.grid::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: var(--gradientHeight, 100%);
   background: linear-gradient(rgba(0, 0, 0, 0), var(--background-beige));
+  pointer-events: none;
+  opacity: var(--gradientOpacity, 1);
+  transition: height 500ms, opacity 300ms ease-out 500ms;
 }
 
-/* -------------------------------- */
-.gradient {
-  background-color: linear-gradient();
+.grid-item {
+  width: 100%;
 }
+
+.grid-clip {
+  height: var(--gradientHeight,1400px);
+  overflow: hidden;
+  transition: height 500ms;
+}
+
 /* -------------------------------- */
 
 /* -----------KNOW-MORE------- */
@@ -285,6 +330,7 @@ body {
   left: 50%;
   z-index: 1000;
   transform: translateX(-50%);
+  margin: 30px auto;
 }
 
 .btn-black:hover {
