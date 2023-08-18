@@ -6,6 +6,10 @@ const loadMoreIcon = document.querySelector("#loadMoreButton i");
 const slides = document.querySelectorAll(".slide");
 const slidesPrev = document.getElementById("slidesPrevBtn");
 const slidesNext = document.getElementById("slidesNextBtn");
+const ofertaBtn = document.getElementById("ofertaBtn");
+const ofertaIcon = document.getElementById("ofertaIcon");
+const dropdownCustomMenu = document.getElementById("dropdownCustomMenu");
+
 var initialGridHeight = "",
   currentSlide = 0;
 
@@ -52,6 +56,12 @@ function toggleSlideActive(target) {
   slides[currentSlide].classList.toggle("slide-active");
 }
 
+function togleLoadMoreButton(name) {
+  loadMoreText.innerText = name;
+  loadMoreIcon.classList.toggle("fa-rotate-180");
+  loadMoreButton.classList.toggle("clicked");
+}
+
 masonry.on(masonry.constants.EVENT_RECALCULATED, function () {
   if (loadMoreButton.classList.contains("clicked")) {
     gridClip.style.height = grid.style.height;
@@ -71,14 +81,11 @@ masonry.on(masonry.constants.EVENT_IMAGE_COMPLETE, function () {
 loadMoreButton.addEventListener("click", () => {
   if (!loadMoreButton.classList.contains("clicked")) {
     changeGradientAndClip();
-    loadMoreText.innerText = "Zwiń ";
-    loadMoreIcon.classList.add("fa-rotate-180");
-    loadMoreButton.classList.add("clicked");
+    togleLoadMoreButton("Zwiń ");
   } else {
     resetGradientHeight();
+    togleLoadMoreButton("Rozwiń ");
     loadMoreText.innerText = "Rozwiń ";
-    loadMoreIcon.classList.remove("fa-rotate-180");
-    loadMoreButton.classList.remove("clicked");
   }
 });
 
@@ -90,4 +97,9 @@ slidesPrev.addEventListener("click", () => {
 slidesNext.addEventListener("click", () => {
   if (currentSlide + 1 >= slides.length) toggleSlideActive(0);
   else toggleSlideActive(currentSlide + 1);
+});
+
+ofertaBtn.addEventListener("click", () => {
+  dropdownCustomMenu.classList.toggle("dropdown-active");
+  ofertaIcon.classList.toggle("fa-rotate-180");
 });

@@ -134,7 +134,7 @@ body {
 /* ------------NAVBAR------------- */
 
 .navbar {
-  background-color: white;
+  background-color: var(--text-white);
   color: var(--text-black);
 }
 
@@ -160,8 +160,81 @@ body {
   box-shadow: none;
 }
 
-.dropdown-menu {
-  background-color: white;
+.searchBar {
+  display: none;
+  position: absolute;
+  width: 250px;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  background-color: var(--text-white);
+  padding: 10px 10px;
+}
+
+.searchBar-active {
+  display: flex;
+}
+
+.searchBar-close {
+  color: red;
+  font-size: 20px;
+}
+
+.dropdown-custom {
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  z-index: 10;
+  transform: translateY(-5px);
+}
+
+.dropdown-custom-btn {
+  cursor: pointer;
+}
+
+.dropdown-custom-menu {
+  list-style: none;
+  background-color: var(--text-white);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: 300ms opacity ease-in-out, 300ms transform ease-in-out;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 992px) {
+  .dropdown-custom {
+    position: relative;
+    left: 20%;
+    opacity: 1;
+  }
+  .dropdown-custom-menu {
+    box-shadow: none;
+    max-height: 0;
+    transition: max-height 300ms ease-in;
+    overflow: hidden;
+  }
+  .dropdown-active {
+    max-height: 120px;
+    pointer-events: auto;
+  }
+}
+
+.dropdown-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item-custom {
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-item-custom:hover,
+.dropdown-item-custom:focus {
+  background-color: var(--background-gray);
 }
 
 /* -------------------------------- */
@@ -227,7 +300,8 @@ body {
   transition: transform 250ms;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
   border: 1px solid var(--main-green);
   transform: scale(95%);
 }
@@ -291,7 +365,8 @@ body {
 /* -------------------------------- */
 
 /* ---------BUTTON--------- */
-.btn {
+
+.btn-b_radius-p {
   border-radius: 200px;
   padding: 14px 22px;
 }
