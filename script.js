@@ -46,6 +46,12 @@ function addClickListenersToImages() {
   });
 }
 
+function toggleSlideActive(target) {
+  slides[currentSlide].classList.toggle("slide-active");
+  currentSlide = target;
+  slides[currentSlide].classList.toggle("slide-active");
+}
+
 masonry.on(masonry.constants.EVENT_RECALCULATED, function () {
   if (loadMoreButton.classList.contains("clicked")) {
     gridClip.style.height = grid.style.height;
@@ -76,28 +82,12 @@ loadMoreButton.addEventListener("click", () => {
   }
 });
 
-function toggleSlideActive(target) {
-  slides[currentSlide].classList.toggle("slide-active");
-  console.log("REMOVE slide-active", currentSlide);
-  currentSlide = target;
-  slides[currentSlide].classList.toggle("slide-active");
-  console.log("ADD slide-active", currentSlide);
-}
-
 slidesPrev.addEventListener("click", () => {
-  console.log("PREV", currentSlide);
-  if (currentSlide - 1 < 0) {
-    toggleSlideActive(slides.length - 1);
-  } else {
-    toggleSlideActive(currentSlide - 1);
-  }
+  if (currentSlide - 1 < 0) toggleSlideActive(slides.length - 1);
+  else toggleSlideActive(currentSlide - 1);
 });
 
 slidesNext.addEventListener("click", () => {
-  console.log("NEXT", currentSlide);
-  if (currentSlide + 1 >= slides.length) {
-    toggleSlideActive(0);
-  } else {
-    toggleSlideActive(currentSlide + 1);
-  }
+  if (currentSlide + 1 >= slides.length) toggleSlideActive(0);
+  else toggleSlideActive(currentSlide + 1);
 });
