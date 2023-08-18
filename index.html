@@ -21,7 +21,7 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg px-5 py-3">
+    <nav class="navbar navbar-expand-lg px-5 py-3 white-background black-text">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <span class="fw-bold">giard</span>design
@@ -37,7 +37,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarMenu">
+        <div class="collapse navbar-collapse position-relative" id="navbarMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item position-relative">
               <a class="nav-link active dropdown-custom-btn" id="ofertaBtn">
@@ -74,30 +74,26 @@
             <li class="nav-item">
               <a class="nav-link active" href="#kontakt">Kontakt</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link dropdown-custom-btn">
-                <i
-                  class="fa-solid fa-magnifying-glass p-1"
-                  id="searchBarBtn"
-                ></i>
-              </a>
-              <!-- <div
-                class="searchBar searchBar-active d-inline-flex align-items-center gap-1"
+            <li class="nav-item d-inline-flex">
+              <div
+                class="search-bar d-flex align-items-center nav-item white-background"
+                id="searchBar"
               >
                 <i
-                  class="fa-solid fa-circle-xmark searchBar-close p-1"
-                  id="closeSearchBar"
+                  class="fa-solid fa-circle-xmark search-bar-close p-1"
+                  id="searchBarClose"
                 ></i>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="searchBar"
-                    id="searchBar"
-                  />
-                  <button type="button" class="btn btn-green">Szukaj</button>
-                </div>
-              </div> -->
+                <input
+                  type="text"
+                  class="search-bar-input"
+                  name="searchBar"
+                  id="searchBarInput"
+                />
+              </div>
+              <a class="nav-link dropdown-custom-btn" id="searchBarBtn">
+                <i class="fa-solid fa-magnifying-glass p-1"></i
+                ><span class="search-bar-text"> Wyszukaj</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -115,12 +111,12 @@
           realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
           podejściem do każdego projektu.
         </p>
-        <div class="d-flex gap-4">
-          <button class="btn btn-b_radius-p btn-green">
+        <div class="row d-flex gap-4">
+          <button class="col-md-4 btn btn-b_radius-p btn-green">
             Skontaktuj się z nami
           </button>
           <a
-            class="btn btn-b_radius-p btn-outline-green btn-outline"
+            class="col-md-5 btn btn-b_radius-p btn-outline-green btn-outline"
             href="#realizacjeSec"
           >
             Zobacz nasze realizacje <i class="fa-solid fa-arrow-down"></i>
@@ -215,7 +211,7 @@
         <img src="./public/Photo.png" alt="" class="w-100 img-fluid" />
       </div>
       <div class="col-lg-6 p-0 py-5 ps-5 d-flex align-items-center gray-text">
-        <div class="col-9 padding-left-96">
+        <div class="col-9 ps-5">
           <div class="navi-small gray-text pb-3">O firmie</div>
           <div class="headline pb-4">
             <span class="line-break">Tworzymy</span> z
@@ -291,7 +287,7 @@
       <div
         class="contact row green-background gray-text d-flex justify-content-center m-0"
       >
-        <div class="col-9 gray-text d-flex justify-content-center">
+        <div class="col-md-10 gray-text">
           <div class="headline-medium">
             Zostańmy w kontakcie! <span class="line-break"></span> Znajdziesz
             nas na
@@ -300,7 +296,7 @@
             >
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-2">
           <p>
             Śledź nasze <span class="line-break"></span>najnowsze realizacje!
           </p>

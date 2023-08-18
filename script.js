@@ -9,6 +9,10 @@ const slidesNext = document.getElementById("slidesNextBtn");
 const ofertaBtn = document.getElementById("ofertaBtn");
 const ofertaIcon = document.getElementById("ofertaIcon");
 const dropdownCustomMenu = document.getElementById("dropdownCustomMenu");
+const searchBar = document.getElementById("searchBar");
+const searchBarBtn = document.getElementById("searchBarBtn");
+const searchBarClose = document.getElementById("searchBarClose");
+const searchBarInput = document.getElementById("searchBarInput");
 
 var initialGridHeight = "",
   currentSlide = 0;
@@ -102,4 +106,17 @@ slidesNext.addEventListener("click", () => {
 ofertaBtn.addEventListener("click", () => {
   dropdownCustomMenu.classList.toggle("dropdown-active");
   ofertaIcon.classList.toggle("fa-rotate-180");
+});
+
+searchBarBtn.addEventListener("click", () => {
+  if (searchBar.classList.contains("search-bar-active")) {
+    alert(`Wyszukano: ${searchBarInput.value}`);
+    searchBarInput.value = "";
+  } else {
+    searchBar.classList.toggle("search-bar-active");
+  }
+});
+
+searchBarClose.addEventListener("click", () => {
+  searchBar.classList.toggle("search-bar-active");
 });

@@ -18,6 +18,8 @@ body {
   height: 100%;
 }
 
+/* -------------CUSTOM UTILS------------ */
+
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -41,6 +43,10 @@ body {
 
 .black-background {
   background-color: var(--background-black);
+}
+
+.white-background {
+  background-color: var(--text-white);
 }
 
 .padding-top-120 {
@@ -80,6 +86,7 @@ body {
 }
 
 /* --------TEXT---------- */
+
 .navi-small {
   font-size: var(--navi-small-font-size);
   color: var(--main-green);
@@ -129,18 +136,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* -------------------------------- */
-
 /* ------------NAVBAR------------- */
-
-.navbar {
-  background-color: var(--text-white);
-  color: var(--text-black);
-}
-
-.nav-item {
-  color: var(--text-black);
-}
 
 .navbar-nav {
   align-items: center;
@@ -160,25 +156,43 @@ body {
   box-shadow: none;
 }
 
-.searchBar {
-  display: none;
-  position: absolute;
-  width: 250px;
-  top: 100%;
-  right: 0;
+/* -------------SEARCHBAR------------ */
+
+.search-bar {
+  width: 0;
+  opacity: 0;
   z-index: 10;
-  background-color: var(--text-white);
-  padding: 10px 10px;
+  transition: width 400ms ease-in, opacity 400ms ease-in;
+  transform-origin: right;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.searchBar-active {
-  display: flex;
+.search-bar-active {
+  height: 40px;
+  width: 220px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.searchBar-close {
+.search-bar-input {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.search-bar-close {
   color: red;
   font-size: 20px;
+  cursor: pointer;
 }
+
+@media screen and (min-width: 992px) {
+  .search-bar-text {
+    display: none;
+  }
+}
+
+/* -------------DROPDOWN-CUSTOM------------ */
 
 .dropdown-custom {
   position: absolute;
@@ -212,12 +226,12 @@ body {
   .dropdown-custom-menu {
     box-shadow: none;
     max-height: 0;
-    transition: max-height 300ms ease-in;
-    overflow: hidden;
+    transition: max-height 300ms;
   }
   .dropdown-active {
     max-height: 120px;
     pointer-events: auto;
+    overflow: hidden;
   }
 }
 
@@ -236,8 +250,6 @@ body {
 .dropdown-item-custom:focus {
   background-color: var(--background-gray);
 }
-
-/* -------------------------------- */
 
 /* -------------CAROUSEL------------ */
 .slides {
@@ -288,8 +300,6 @@ body {
   opacity: 1;
 }
 
-/* -------------------------------- */
-
 /* -----------CARD---------- */
 .card {
   margin: 20px 32px;
@@ -317,7 +327,6 @@ body {
   letter-spacing: -1%;
   font-size: 14px;
 }
-/* -------------------------------- */
 
 /* -----------GRID------- */
 .grid {
@@ -347,8 +356,6 @@ body {
   transition: height 500ms;
 }
 
-/* -------------------------------- */
-
 /* -----------KNOW-MORE------- */
 .know-more {
   text-decoration: none;
@@ -362,7 +369,6 @@ body {
   background-color: var(--main-green);
   color: var(--text-white);
 }
-/* -------------------------------- */
 
 /* ---------BUTTON--------- */
 
@@ -434,10 +440,10 @@ body {
 /* -------------CONTACT---------------- */
 .contact {
   width: 100%;
-  padding: 110px 120px;
+  padding: 10% 7%;
 }
 
-/* ------------------------------------- */
+/* -------------FOOTER------------ */
 
 .hardline {
   border: 1px solid var(--background-gray);
