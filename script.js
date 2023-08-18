@@ -3,7 +3,11 @@ const gridClip = document.getElementById("gridClip");
 const loadMoreButton = document.getElementById("loadMoreButton");
 const loadMoreText = document.querySelector("#loadMoreButton span");
 const loadMoreIcon = document.querySelector("#loadMoreButton i");
-var initialGridHeight = "";
+const slides = document.querySelectorAll(".slide");
+const slidesPrev = document.getElementById("slidesPrevBtn");
+const slidesNext = document.getElementById("slidesNextBtn");
+var initialGridHeight = "",
+  currentSlide = 0;
 
 var masonry = new Macy({
   container: ".grid",
@@ -69,5 +73,31 @@ loadMoreButton.addEventListener("click", () => {
     loadMoreText.innerText = "Rozwiń ";
     loadMoreIcon.classList.remove("fa-rotate-180");
     loadMoreButton.classList.remove("clicked");
+  }
+});
+
+function toggleSlideActive(target) {
+  slides[currentSlide].classList.toggle("slide-active");
+  console.log("REMOVE slide-active", currentSlide);
+  currentSlide = target;
+  slides[currentSlide].classList.toggle("slide-active");
+  console.log("ADD slide-active", currentSlide);
+}
+
+slidesPrev.addEventListener("click", () => {
+  console.log("PREV", currentSlide);
+  if (currentSlide - 1 < 0) {
+    toggleSlideActive(slides.length - 1);
+  } else {
+    toggleSlideActive(currentSlide - 1);
+  }
+});
+
+slidesNext.addEventListener("click", () => {
+  console.log("NEXT", currentSlide);
+  if (currentSlide + 1 >= slides.length) {
+    toggleSlideActive(0);
+  } else {
+    toggleSlideActive(currentSlide + 1);
   }
 });

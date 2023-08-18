@@ -107,10 +107,7 @@
         </div>
       </div>
     </nav>
-    <section
-      class="container-fluid row beige-background"
-      id="hero"
-    >
+    <section class="container-fluid row beige-background" id="hero">
       <div class="col-lg-6 padding-vertical-120 ps-6 pe-5">
         <div class="headline fw-medium pb-5">
           <span class="line-break">Nowoczesna</span>
@@ -124,33 +121,23 @@
         </p>
         <div class="d-flex gap-4">
           <button class="btn btn-green">Skontaktuj się z nami</button>
-          <button class="btn btn-outline-green btn-outline">
-            Zobacz nasze realizacje
-          </button>
+          <a class="btn btn-outline-green btn-outline" href="#realizacjeSec">
+            Zobacz nasze realizacje <i class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
       </div>
-      <div class="col-lg-6 p-0">
-        <div class="carousel ">
-          <button class="btn-carousel prev">
+      <div class="col-lg-6 slides">
+        <img src="./public/Photo5.png" alt="" class="slide slide-active" />
+        <img src="./public/Photo6.png" alt="" class="slide" />
+        <img src="./public/Photo.png" alt="" class="slide" />
+        <img src="./public/Photo1.png" alt="" class="slide" />
+        <div class="slides-buttons d-flex">
+          <button class="btn-carousel prev" id="slidesPrevBtn">
             <i class="fa-solid fa-arrow-left"></i>
           </button>
-          <button class="btn-carousel next">
+          <button class="btn-carousel next" id="slidesNextBtn">
             <i class="fa-solid fa-arrow-right"></i>
           </button>
-          <ul>
-            <li class="slide" data-active>
-              <img src="./public/Photo3.png" alt=""/>
-            </li>
-            <li class="slide">
-              <img src="./public/Photo4.png" alt="" />
-            </li>
-            <li class="slide">
-              <img src="./public/Photo5.png" alt="" />
-            </li>
-            <li class="slide">
-              <img src="./public/Photo6.png" alt="" />
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -222,10 +209,7 @@
         </div>
       </div>
     </section>
-    <section
-      id="oFirmie"
-      class="container-fluid m-0 p-0 row green-background"
-    >
+    <section id="oFirmie" class="container-fluid m-0 p-0 row green-background">
       <div class="col-lg-6 p-0">
         <img src="./public/Photo.png" alt="" class="w-100 img-fluid" />
       </div>
