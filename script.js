@@ -1,21 +1,30 @@
-const grid = document.getElementById("realizacjeGrid");
-const gridClip = document.getElementById("gridClip");
-const loadMoreButton = document.getElementById("loadMoreButton");
-const loadMoreText = document.querySelector("#loadMoreButton span");
-const loadMoreIcon = document.querySelector("#loadMoreButton i");
-const slides = document.querySelectorAll(".slide");
-const slidesPrev = document.getElementById("slidesPrevBtn");
-const slidesNext = document.getElementById("slidesNextBtn");
-const ofertaBtn = document.getElementById("ofertaBtn");
-const ofertaIcon = document.getElementById("ofertaIcon");
-const dropdownCustomMenu = document.getElementById("dropdownCustomMenu");
-const searchBar = document.getElementById("searchBar");
-const searchBarBtn = document.getElementById("searchBarBtn");
-const searchBarClose = document.getElementById("searchBarClose");
-const searchBarInput = document.getElementById("searchBarInput");
+const grid = document.getElementById("realizacjeGrid"),
+  gridClip = document.getElementById("gridClip"),
+  loadMoreButton = document.getElementById("loadMoreButton"),
+  loadMoreText = document.querySelector("#loadMoreButton span"),
+  loadMoreIcon = document.querySelector("#loadMoreButton i"),
+  slides = document.querySelectorAll(".slide"),
+  slidesPrev = document.getElementById("slidesPrevBtn"),
+  slidesNext = document.getElementById("slidesNextBtn"),
+  ofertaBtn = document.getElementById("ofertaBtn"),
+  ofertaIcon = document.getElementById("ofertaIcon"),
+  dropdownCustomMenu = document.getElementById("dropdownCustomMenu"),
+  searchBar = document.getElementById("searchBar"),
+  searchBarBtn = document.getElementById("searchBarBtn"),
+  searchBarClose = document.getElementById("searchBarClose"),
+  searchBarInput = document.getElementById("searchBarInput"),
+  imageGallery = document.getElementById("imageGallery"),
+  imageGalleryClose = document.getElementById("imageGalleryClose"),
+  imageGalleryImg = document.getElementById("imageGalleryImg"),
+  imageGalleryPrev = document.getElementById("imageGalleryPrev"),
+  imageGalleryNext = document.getElementById("imageGalleryNext"),
+  imageGalleryPreview = document.getElementById("imageGalleryPreview"),
+  preview = document.querySelectorAll(".image-gallery-preview img"),
+  previewImages = Array.from(preview);
 
 var initialGridHeight = "",
-  currentSlide = 0;
+  currentSlide = 0,
+  currentImage = -1;
 
 var masonry = new Macy({
   container: ".grid",
@@ -46,12 +55,24 @@ function changeGradientAndClip() {
 }
 
 function addClickListenersToImages() {
-  let images = document.querySelectorAll(".grid-item");
+  let images = document.querySelectorAll(".grid-item"),
+    imagesArray = [...images];
   images.forEach((image) => {
     image.addEventListener("click", () => {
-      console.log(image.src);
+      openImageGallery(image.src, imagesArray.indexOf(image));
     });
   });
+}
+
+function openImageGallery(src, index) {
+  imageGallery.classList.add("image-gallery-active");
+  imageGalleryImg.src = src;
+  currentImage = index;
+}
+
+function controlImageGallery() {
+  let image = previewImages[currentImage];
+  openImageGallery(image.src, previewImages.indexOf(image));
 }
 
 function toggleSlideActive(target) {
@@ -119,4 +140,26 @@ searchBarBtn.addEventListener("click", () => {
 
 searchBarClose.addEventListener("click", () => {
   searchBar.classList.toggle("search-bar-active");
+});
+
+imageGalleryClose.addEventListener("click", () => {
+  imageGallery.classList.toggle("image-gallery-active");
+});
+
+previewImages.forEach((previewImage) => {
+  previewImage.addEventListener("click", () => {
+    openImageGallery(previewImage.src, previewImages.indexOf(previewImage));
+  });
+});
+
+imageGalleryPrev.addEventListener("click", () => {
+  if (currentImage - 1 < 0) currentImage = previewImages.length - 1;
+  else currentImage -= 1;
+  controlImageGallery();
+});
+
+imageGalleryNext.addEventListener("click", () => {
+  if (currentImage + 1 >= previewImages.length) currentImage = 0;
+  else currentImage += 1;
+  controlImageGallery();
 });
