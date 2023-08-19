@@ -11,6 +11,7 @@ const grid = document.getElementById("realizacjeGrid"),
   dropdownCustomMenu = document.getElementById("dropdownCustomMenu"),
   searchBar = document.getElementById("searchBar"),
   searchBarBtn = document.getElementById("searchBarBtn"),
+  searchBarText = document.getElementById("searchBarText"),
   searchBarClose = document.getElementById("searchBarClose"),
   searchBarInput = document.getElementById("searchBarInput"),
   imageGallery = document.getElementById("imageGallery"),
@@ -135,11 +136,13 @@ searchBarBtn.addEventListener("click", () => {
     searchBarInput.value = "";
   } else {
     searchBar.classList.toggle("search-bar-active");
+    searchBarText.classList.toggle("hidden");
   }
 });
 
 searchBarClose.addEventListener("click", () => {
   searchBar.classList.toggle("search-bar-active");
+  searchBarText.classList.toggle("hidden");
 });
 
 imageGalleryClose.addEventListener("click", () => {
