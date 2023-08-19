@@ -126,6 +126,16 @@ body {
   line-height: 115%;
 }
 
+@media screen and (max-width: 992px) {
+  .headline {
+    font-size: 30px;
+  }
+
+  .headline-medium {
+    font-size: 15px;
+  }
+}
+
 .headline-medium {
   font-size: var(--headline-medium-font-size);
   line-height: 120%;
@@ -183,6 +193,10 @@ body {
 .search-bar-close {
   font-size: 20px;
   cursor: pointer;
+}
+
+.search-bar-text {
+  font-size: 10px;
 }
 
 @media screen and (min-width: 992px) {
@@ -380,7 +394,7 @@ body {
   top: 10%;
   height: 60%;
   width: 100%;
-  max-width: 700px;
+    max-width: 700px;
 }
 
 .image-gallery-content img {
@@ -427,7 +441,7 @@ body {
 
 .image-gallery-preview {
   position: absolute;
-  top: 70%;
+  bottom: 2%;
   width: 80%;
   height: fit-content;
   overflow: auto;
@@ -436,7 +450,7 @@ body {
 }
 
 .image-gallery-preview img {
-  max-height: 200px;
+  max-height: 150px;
   opacity: 0.4;
 }
 

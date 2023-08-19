@@ -76,11 +76,11 @@
             </li>
             <li class="nav-item d-inline-flex">
               <div
-                class="search-bar d-flex align-items-center nav-item white-background"
+                class="search-bar d-flex align-items-center justify-content-end nav-item white-background"
                 id="searchBar"
               >
                 <i
-                  class="fa-solid fa-xmark search-bar-close p-1"
+                  class="fa-solid fa-xmark search-bar-close p-1 ps-0"
                   id="searchBarClose"
                 ></i>
                 <input
@@ -90,9 +90,11 @@
                   id="searchBarInput"
                 />
               </div>
-              <a class="nav-link dropdown-custom-btn" id="searchBarBtn">
+              <a class="nav-link dropdown-custom-btn d-inline-flex align-items-center" id="searchBarBtn">
                 <i class="fa-solid fa-magnifying-glass p-1"></i
-                ><span class="search-bar-text"> Wyszukaj</span>
+                ><span class="search-bar-text fs-6" id="search-bar-text">
+                  Szukaj</span
+                >
               </a>
             </li>
           </ul>
